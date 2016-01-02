@@ -25,6 +25,5 @@
     "googleapis": "^2.1.7",
     "jade": "^1.11.0",
     "serve-favicon": "^2.3.0",
-    "validator": "^4.4.0"
   }
 }

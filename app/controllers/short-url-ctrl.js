@@ -1,34 +1,21 @@
 var fs = require("fs");
 var path = require("path");
 var url = require("url");
-var dns = require("dns");
-var validator = require("validator");
+var validUrl = require("valid-url");
 
-module.exports.newUrl = function (req, res) {
+module.exports.newUrl = function(req, res) {
 	var urlPar = req.params[0];
 	var rsp = {};
 	var host = req.headers["host"];
 	var dataPath = path.resolve(__dirname, "../data/short-url.json");
 
-dns.resolve(urlPar, function(err, data){
-	if(err){
-		console.log(err)
-	}else{
-		console.log(data)
-	}
-})
-
-
-	if (validator.isURL(urlPar)) {
-		if(!url.parse(urlPar).protocol){
-			urlPar = "http://" + urlPar;
-		}
+	if (validUrl.isUri(urlPar)) {
 		fs.readFile(dataPath, {
 			encoding: "utf-8"
-		}, function (err, data) {
+		}, function(err, data) {
 			if (err) throw err;
 			fileData = JSON.parse(data);
-			var match = fileData.data.filter(function (d) {
+			var match = fileData.data.filter(function(d) {
 				return d.original_url === urlPar;
 			})
 			if (match.length === 0) {
@@ -40,7 +27,7 @@ dns.resolve(urlPar, function(err, data){
 				});
 				fs.writeFile(dataPath, JSON.stringify(fileData), {
 					encoding: "utf-8"
-				}, function (err) {
+				}, function(err) {
 					if (err) throw err;
 					console.log("saved");
 				});
@@ -55,14 +42,14 @@ dns.resolve(urlPar, function(err, data){
 		res.send(JSON.stringify(rsp));
 	}
 }
-module.exports.getShort = function (req, res) {
+module.exports.getShort = function(req, res) {
 	var dataPath = path.resolve(__dirname, "../data/short-url.json");
 	fs.readFile(dataPath, {
 		encoding: "utf-8"
-	}, function (err, data) {
+	}, function(err, data) {
 		if (err) throw err;
 		var fileData = JSON.parse(data);
-		var match = fileData.data.filter(function (d) {
+		var match = fileData.data.filter(function(d) {
 			return String(d.id) === req.params.id;
 		})
 		if (match.length === 0) {

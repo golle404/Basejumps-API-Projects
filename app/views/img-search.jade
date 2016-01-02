@@ -1,0 +1,35 @@
+doctype html
+head
+	meta(charset='utf-8')
+	meta(http-equiv='X-UA-Compatible', content='IE=edge')
+	meta(name='viewport', content='width=device-width, initial-scale=1')
+	title API Basejump: Image Search Abstraction Layer
+	link(rel='stylesheet', media='screen', href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
+
+body
+	.container
+		.header 
+			h1 API Basejump: Image Search Abstraction Layer
+			h3 
+				a(href = "http://www.freecodecamp.com/challenges/basejump-image-search-abstraction-layer") FreeCodeCamp project
+		.panel.panel-default
+			.panel-heading
+				h3.panel-title User stories:
+			ul.list-group
+				li.list-group-item  I can get the image URLs, alt text and page urls for a set of images relating to a given search string.
+					br
+					strong Example:
+					br
+					a(href="http://#{host}/api/imagesearch/lolcats") http://#{host}/api/imagesearch/lolcats
+				li.list-group-item  I can paginate through the responses by adding a ?offset=2 parameter to the URL.
+					br
+					strong Example:
+					br
+					a(href="http://#{host}/api/imagesearch/lolcats?offset=2") http://#{host}/api/imagesearch/lolcats?offset=2
+				li.list-group-item  I can get a list of the most recently submitted search strings.
+					br
+					strong Example:
+					br
+					a(href="http://#{host}/api/latest/imagesearch") http://#{host}/api/latest/imagesearch
+
+

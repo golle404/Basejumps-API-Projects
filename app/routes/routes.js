@@ -8,7 +8,10 @@ var upload = multer();
 var router = express.Router();
 
 router.get("/", function(req, res) {
-	res.send("OK");
+	var prm = {
+		host: req.headers.host
+	};
+	res.render("index", prm);
 })
 
 

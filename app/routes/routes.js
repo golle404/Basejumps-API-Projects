@@ -2,6 +2,8 @@ var express = require("express");
 var imageSearchCtrl = require("../controllers/image-search-ctrl");
 var shortUrlCtrl = require("../controllers/short-url-ctrl");
 var timestampCtrl = require("../controllers/timestamp-ctrl");
+var multer  = require('multer')
+var upload = multer();
 
 var router = express.Router();
 
@@ -58,5 +60,18 @@ router.get("/api/headerparser/", function(req, res) {
 	};
 	res.render("headerparser", prm);
 });
+
+////// file metadata api   /////
+
+router.get("/api/fileanalyse/", function(req, res){
+	var prm = {
+		host: req.headers.host
+	};
+	res.render("fileanalyse", prm);
+})
+
+router.post("/api/fileanalyse/",upload.single("file"), function(req, res){
+	res.send({fileSize: req.file.size + " bytes"});
+})
 
 module.exports = router;

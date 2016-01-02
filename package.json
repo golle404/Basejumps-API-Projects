@@ -25,8 +25,12 @@
     "express": "^4.13.3",
     "googleapis": "^2.1.7",
     "jade": "^1.11.0",
+    "multer": "^1.1.0",
     "serve-favicon": "^2.3.0",
     "valid-url": "^1.0.9",
     "validator": "^4.4.0"
+  },
+  "devDependencies": {
+    "bower": "^1.7.2"
   }
 }

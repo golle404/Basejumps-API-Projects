@@ -1,0 +1,24 @@
+{
+  "name": "fcc-api",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "golle404"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/golle404/Basejumps-API-Projects",
+  "moduleType": [
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6"
+  }
+}

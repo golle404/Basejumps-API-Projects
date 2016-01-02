@@ -1,0 +1,35 @@
+doctype html
+head
+	meta(charset='utf-8')
+	meta(http-equiv='X-UA-Compatible', content='IE=edge')
+	meta(name='viewport', content='width=device-width, initial-scale=1')
+	title API Basejump:  File Metadata Microservice
+	link(rel='stylesheet', media='screen', href='/lib/bootstrap/dist/css/bootstrap.min.css')
+
+body
+	.container
+		.header 
+			h1 API Basejump:  File Metadata Microservice
+			h3 
+				a(href = "http://www.freecodecamp.com/challenges/basejump-file-metadata-microservice") FreeCodeCamp project
+		.panel.panel-default
+			.panel-heading
+				h3.panel-title User stories:
+			ul.list-group
+				li.list-group-item   I can submit a FormData object that includes a file upload.
+				li.list-group-item  When I submit something, I will receive the file size in bytes within the JSON response
+				li.list-group-item  
+					form.form-inline(enctype="multipart/form-data")
+						.form-group
+							input.form-control(type="file")
+						.form-group
+							input.form-control(type="submit")
+					br
+					strong Response
+					br
+					code#response-json {} 
+			.panel-footer
+				a(href="https://github.com/golle404/Basejump-File-Metadata-Microservice") source
+	script(src='/lib/jquery/dist/jquery.min.js')
+	script(src="/js/script.js")
+

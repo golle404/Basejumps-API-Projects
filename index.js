@@ -23,8 +23,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 
 // listen
 var port = process.env.PORT || 3000;
-var ip = process.env.APP_IP || "127.0.0.1";
 
-app.listen(port, ip, function () {
-	console.log("Server listening at", ip + ":" + port);
+app.listen(port, function () {
+	console.log("Server listening at" + port);
 });

@@ -13,7 +13,7 @@ var app = express();
 app.set('views', path.join(__dirname, '/app/views'));
 app.set("view engine", "jade");
 // favicon
-app.use(favicon(__dirname + '/public/favicon.png'));
+app.use(favicon(__dirname + '/public/favicon.ico'));
 
 // router
 app.use('/', routes);

@@ -20,11 +20,13 @@
   },
   "homepage": "https://github.com/golle404/Basejumps-API-Projects#readme",
   "dependencies": {
+    "dateformat": "^1.0.12",
     "dotenv": "^1.2.0",
     "express": "^4.13.3",
     "googleapis": "^2.1.7",
     "jade": "^1.11.0",
     "serve-favicon": "^2.3.0",
-    "valid-url": "^1.0.9"
+    "valid-url": "^1.0.9",
+    "validator": "^4.4.0"
   }
 }

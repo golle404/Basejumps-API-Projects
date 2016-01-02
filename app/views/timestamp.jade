@@ -1,0 +1,37 @@
+doctype html
+head
+	meta(charset='utf-8')
+	meta(http-equiv='X-UA-Compatible', content='IE=edge')
+	meta(name='viewport', content='width=device-width, initial-scale=1')
+	title API Basejump: Timestamp microservice
+	link(rel='stylesheet', media='screen', href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
+
+body
+	.container
+		.header 
+			h1 API Basejump: Timestamp microservice
+			h3 
+				a(href = "http://www.freecodecamp.com/challenges/basejump-timestamp-microservice") FreeCodeCamp project
+		.panel.panel-default
+			.panel-heading
+				h3.panel-title User stories:
+			ul.list-group
+				li.list-group-item   I can pass a string as a parameter, and it will check to see whether that string contains either a unix timestamp or a natural language date (example: April 29, 1970)
+					br
+					strong Example:
+					br
+					a(href="http://#{host}api/timestamp/april%2029%201970") http://#{host}/api/timestamp/april%2029%201970
+					br
+					a(href="http://#{host}api/timestamp/10188000") http://#{host}/api/timestamp/10188000
+				li.list-group-item  If it does, it returns both the Unix timestamp and the natural language form of that date.
+					br
+					strong Example:
+					code {"unix":10188000,"natural":"April 29, 1970"}
+				li.list-group-item  If it does not contain a date or Unix timestamp, it returns null for those properties.
+					br
+					strong Example:
+					br
+					code {"unix":null,"natural":null}
+			.panel-footer
+				a(href="https://github.com/golle404/API-Basejump-Timestamp-microservice") source
+
